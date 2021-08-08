@@ -1,23 +1,21 @@
-queen_of_hearts = {
-    'suit':'hearts',
-    'rank': 'queen'
-}
+
+from random import seed
+from random import randint
+
 deck=[]
-ranks = [
-    {"name":"predator",
-'power': 9001,
-'succumbs_to': "ceos"
-},
-"kings", "queens", "presidents", "ceos", "aliens"] #len(x)
-suits = ["black", "brown", "double-breasted"]
+ranks = ["deuce", "three", "four", "five", "six","seven","eight","nine","ten","jack","queen","king","ace"] 
+suits = ["hearts", "diamonds", "spades","clubs"]
+random = []
 for suit in suits:
     for rank in ranks:
         deck.append({
             'suit':suit,
             'rank':rank
+            'random':randint(0,1000000)
         })
 print(deck)
 print('sanity check length:',len(suits)* len(ranks)== len(deck))
+print(len(deck))
 free=True
 def shuffle (unshuffled):
     temp= list(unshuffled)
